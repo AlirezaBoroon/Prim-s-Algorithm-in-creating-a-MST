@@ -25,7 +25,7 @@ def prim_algorithm(adj_matrix):
     return mst_edges
 
 def visualize_graph(G, pos, mst_edges):
-    # Interactive mode is one, so the windows of the figures will updata and also close automatically.
+    # Interactive mode is on, so the windows of the figures will update and also close automatically:
     plt.ion()
     mst_G = nx.Graph()
     for u, v, weight in mst_edges:
@@ -34,7 +34,7 @@ def visualize_graph(G, pos, mst_edges):
         nx.draw(G, pos, with_labels=True, node_color='lightblue', node_size=500, font_size=10)
         labels = nx.get_edge_attributes(G, 'weight')
         nx.draw_networkx_edge_labels(G, pos, edge_labels=labels)
-        #### the sizes should be fitted with already plotted plots. (but the above plot should be written later and with width= 2)
+        #### the sizes should be fitted with already plotted plots. (but the below plot should be written later also with width= 2)
         nx.draw(mst_G, pos, with_labels=True, edge_color='r', width=2, node_color='lightblue', node_size=500, font_size=10)
         mst_labels= nx.get_edge_attributes(mst_G, 'weight')
         nx.draw_networkx_edge_labels(mst_G, pos, edge_labels= mst_labels)
@@ -108,7 +108,7 @@ while True:
                 else:
                     num= random.randint(0, 10)
                     if num% 3== 0:
-                        # zero weight is chosen in relateion of 1/3 +(a little fraction) from all other possible edge weights. it can also be done by a statistics distribution.
+                        # zero weight is chosen in relateion of 1/3 +(a little fraction) from all other possible edge weights. it can also be done by a Probability Distribution.
                         edge_weight= 0
                     else:
                         edge_weight= random.randint(1, 40) # the bounds are based on your preferences.
@@ -117,7 +117,7 @@ while True:
         print("A random Graph has been chosen!")
         break
     else:
-        print("Please choose from the menue.")
+        print("Please choose from the menu.")
         continue
 # Showing the main Graph:
 print("The Graph is:")
